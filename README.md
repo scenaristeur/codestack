@@ -80,3 +80,14 @@ yarn dev
 ![Alt text](image-2.png)
 
 
+![Alt text](image-4.png)
+
+
+
+# change admin config
+
+```
+#VITE_SIMPLE_REST_URL=http://my.api.url/
+VITE_SIMPLE_REST_URL=http://localhost:8000/
+
+```
