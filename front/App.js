@@ -1,96 +1,175 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  View,
+  FlatList,
+  Text,
+  Button,
+  ActivityIndicator,
+} from "react-native";
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View , FlatList, Text} from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
+// import Button from "./components/Button";
+import ImageViewer from "./components/ImageViewer";
 
-import Button from './components/Button';
-import ImageViewer from './components/ImageViewer';
-
-
-
-const PlaceholderImage = require('./assets/images/background-image.png');
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f64',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d74',
-    title: 'Third Item',
-  }
-];
-
-const Item = ({title}) => (
+const Item = ({ item, navigation }) => (
   <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.title}>{item.title}</Text>
+    <Text>{item.content}</Text>
+    <Button
+      title="Details"
+      onPress={() => {
+        /* 1. Navigate to the Details route with params */
+        navigation.navigate("Details", {
+          id: item.id,
+          otherParam: "anything you want here",
+        });
+      }}
+    />
   </View>
 );
 
+let api = "http://localhost:8000/api/";
 
-export default function App() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  
-  const pickImageAsync = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      quality: 1,
-    });
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Accueil</Text>
+      <Button
+        title="Reserver"
+        onPress={() => navigation.navigate("ListeStages")}
+      />
+    </View>
+  );
+}
 
-    if (!result.canceled) {
-      setSelectedImage(result.assets[0].uri);
-    } else {
-      alert('You did not select any image.');
+function ListeStagesScreen({ navigation }) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    try {
+      const response = await fetch(api + "notes");
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <ImageViewer  placeholderImageSource={PlaceholderImage}
-          selectedImage={selectedImage} />
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>ListeStagesScreen</Text>
+
+      <View style={styles.container}>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <FlatList
+            data={data}
+            keyExtractor={({ id }) => id}
+            renderItem={({ item }) => (
+              <Item item={item} navigation={navigation} />
+            )}
+          />
+        )}
       </View>
 
-{/* <!-- FlatList --> */}
-<FlatList
-        data={DATA}
-         renderItem={({item}) => <Item title={item.title} />}
-        //renderItem={({item}) => - item }
-        keyExtractor={item => item.id}
+      <View style={styles.footerContainer}>
+        {/* <Button
+            theme="primary"
+            label="Choose a photo"
+            onPress={pickImageAsync}
+          />
+          <Button label="Use this photo" /> */}
+      </View>
+      <StatusBar style="auto" />
+
+      <Button title="Accueil" onPress={() => navigation.navigate("Home")} />
+      {/* <Button title="Go back" onPress={() => navigation.goBack()} /> */}
+    </View>
+  );
+}
+
+function DetailsScreen({ route, navigation }) {
+  const { id, otherParam } = route.params;
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Details Screen</Text>
+      <Text>id: {JSON.stringify(id)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+      <Button title="Accueil" onPress={() => navigation.navigate("Home")} />
+      <Button
+        title="Back to liste des stages"
+        onPress={() => navigation.goBack()}
       />
-    {/* FlatList */}
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Code 'n Surf" }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="ListeStages"
+          component={ListeStagesScreen}
+          options={{ title: "Liste des stages" }}
+        />
+      </Stack.Navigator>
+      {/* <View style={styles.container}>
+
+      <View style={{ flex: 1, padding: 24 }}>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <FlatList
+            data={data}
+            keyExtractor={({ id }) => id}
+            renderItem={({ item }) => (
+              <Item item={item} />
+            )}
+          />
+        )}
+      </View>
 
       <View style={styles.footerContainer}>
-        <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+        <Button
+          theme="primary"
+          label="Choose a photo"
+          onPress={pickImageAsync}
+        />
         <Button label="Use this photo" />
       </View>
       <StatusBar style="auto" />
-    </View>
+    </View> */}
+      <StatusBar style="auto" />
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#25292e',
-    alignItems: 'center',
-  },
-  imageContainer: {
-    flex: 1,
-    paddingTop: 58,
+    flex: 2,
+    backgroundColor: "#25292e",
+    alignItems: "center",
+    // height: "760px",
   },
   image: {
     width: 320,
@@ -98,11 +177,11 @@ const styles = StyleSheet.create({
     borderRadius: 18,
   },
   footerContainer: {
-    flex: 1 / 3,
-    alignItems: 'center',
+    flex: 1,
+    alignItems: "center",
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: "#f9c2ff",
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
