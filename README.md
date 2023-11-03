@@ -1,93 +1,32 @@
-# Project from scratch
-
-```
-mkdir codestack
-cd codestack
-mkdir front admin doc
-
-```
-
-
-# admin part 
-Interface utilisateur pour le gestionnaire, l'administrateur
-
-- using react admin https://marmelab.com/react-admin/Tutorial.html
-
-```
-cd admin 
-npm init react-admin test-admin
-# choose 
-# SIMPLE REST
-# Hard Coded Local username/password
-# Name of a ressource : stage, user, hebergement, package, repas
-
-```
-
-![Alt text](./images/image-1.png)
-
-
-![Alt text](./images/image-2.png)
+# Backend + PostgreSQL
+- https://codevoweb.com/build-a-crud-api-with-nodejs-and-sequelize/
 
 
 ```
-cd test-admin
+cd back
+# yarn install              # 1er run
+docker-compose up -d        # démarre le container de base PostgreSQL 
+yarn start                  # demarre le backend / API
+```
+-> gives us api on http://localhost:8000/api
+
+# React Admin
+```
+cd admin
+# npm install               # 1er run
 npm run dev
-
-```
--> http://localhost:5173 and login with janedoe/password or johndoe/password
-
-
-![Alt text](image-3.png)
-
-# back part
-- inspired from https://codevoweb.com/build-a-crud-api-with-nodejs-and-sequelize/?utm_content=cmp-true
-
-```
-git clone https://github.com/wpcodevo/crud-app-sequelize back
-yarn install
-docker-compose up -d
-yarn start
 ```
 
-![Alt text](image-1.png)
+-> give us react admin on http://localhost:5173
+janedoe/password or johndoe/pawwsord
 
-<!-- # back part
-Backend for reactAdmin with Express & sequelize
-- using https://github.com/nicgirault/express-crud-router
+--> go to notes and create an new one
+--> see it in back console and in react admin
 
-cd to '/back' folder
+# Front React Native
 ```
-npm init -y
-npm install express-crud-router
-
-
-
-``` -->
-
-
-# front note-app test part
-
-```
-git clone https://github.com/wpcodevo/reactjs-crud-note-app note-app
-ce note-app
-yarn
-yarn dev 
-
-```
--> Local:   http://localhost:3000/
-
-
-![Alt text](image-2.png)
-
-
-![Alt text](image-4.png)
-
-
-
-# change admin config
-
-```
-#VITE_SIMPLE_REST_URL=http://my.api.url/
-VITE_SIMPLE_REST_URL=http://localhost:8000/
+cd front
+npm start
+then choose w for web version
 
 ```
