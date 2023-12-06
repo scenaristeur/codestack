@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: ["http://localhost:3000", "http://localhost:5173", "http://localhost:19006"],
     credentials: true,
     exposedHeaders: 'X-Total-Count'
   })

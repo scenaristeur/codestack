@@ -1,16 +1,18 @@
 # Backend + PostgreSQL
-- https://codevoweb.com/build-a-crud-api-with-nodejs-and-sequelize/
 
+- https://codevoweb.com/build-a-crud-api-with-nodejs-and-sequelize/
 
 ```
 cd back
 # yarn install              # 1er run
-docker-compose up -d        # démarre le container de base PostgreSQL 
-yarn start                  # demarre le backend / API
+docker-compose up -d        # démarre le container de base PostgreSQL
+npm run start                  # demarre le backend / API
 ```
+
 -> gives us api on http://localhost:8000/api
 
 # React Admin
+
 ```
 cd admin
 # npm install               # 1er run
@@ -24,6 +26,9 @@ janedoe/password or johndoe/pawwsord
 --> see it in back console and in react admin
 
 # Front React Native
+
+!!! POWERSHELL !!!
+
 ```
 cd front
 npm start

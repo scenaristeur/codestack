@@ -10,7 +10,7 @@ import {
 export default function StageListeItem({ item, navigation }) {
   return (
     <View style={styles.item}>
-      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.title}>Le stage :{item.title}</Text>
       <Text>{item.content}</Text>
       <Button
         title="Details"
