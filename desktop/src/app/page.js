@@ -13,12 +13,19 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import Container from '@mui/material/Container';
 
 import Stack from "@mui/material/Stack";
 import { data } from "../data.js"
 console.log(data)
+
+
+
 
 
 import HeroBlock from "../components/heroBlock.js";
@@ -94,7 +101,7 @@ export default function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Code and Surf
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -125,8 +132,68 @@ export default function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
+      <Container >
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
+     
+
+<div height="400" > PREMIER bandeau</div>
+
+<Card >
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image="/img/surf.png"
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions>
+    </Card>
+
+
+<div height="400" > SECOND bandeau</div>
+
+
+<Card>
+<CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image="/img/tube.png"
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions>
+    </Card>
+
+    <div height="400" > Troisieme bandeau</div>
 
         <Stack spacing={2}>
           {data.HEROBLOCKS .map(hero => 
@@ -179,7 +246,9 @@ export default function DrawerAppBar(props) {
           facilis libero dolorem dolores sunt inventore perferendis, aut
           sapiente modi nesciunt.
         </Typography>
+
       </Box>
+      </Container>
     </Box>
   );
 }

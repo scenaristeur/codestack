@@ -26,22 +26,19 @@ export default function HeroBlock(props) {
         <Grid xs={6}>
           <h3>{props.value.title}</h3>
           <div>{props.value.text}</div>
+          <button href="{props.value.link}">More</button>
         </Grid>
       )}
 
       <Grid xs={6}>
-        
-        <img
-          src={props.value.imageSource}
-          width="100%"
-          alt="Katherine Johnson"
-        />
+      <img src={`../img/${props.value.imageSource}`}  alt={props.value.title}></img>
       </Grid>
 
       {props.value.id % 2 == 0 && (
         <Grid xs={6}>
           <h3>{props.value.title}</h3>
           <div>{props.value.text}</div>
+          <button href="{props.value.link}">More</button>
         </Grid>
       )}
     </Grid>

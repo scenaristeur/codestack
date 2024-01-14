@@ -3,18 +3,18 @@ export const HEROBLOCKS = [
     id: "0",
     title: "Un environnement exceptionnel",
     text: "Découvrez nos cours...",
-    imageSource: "/images/tube.png",
+    imageSource: "tube.png",
   },
   {
     id: "1",
     title: "Ce que nous proposons",
-    imageSource: "images/tube.png",
+    imageSource: "surf.png",
     link: "https://www.google.com",
   },
   {
     id: "2",
     title: "Des spots de surf exceptionnels",
-    imageSource: "../images/surf.png",
+    imageSource: "bureau.png",
     link: "https://www.google.com",
   },
   {
