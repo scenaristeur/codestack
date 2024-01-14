@@ -1,4 +1,4 @@
-export const HEROBLOCKS = [
+export const LANDING_BLOCKS = [
   {
     id: "0",
     title: "Des spots de surf exceptionnels",
@@ -9,6 +9,7 @@ export const HEROBLOCKS = [
      faucibus nisl.
      ipsum id ac Morbi malesuada id`,
     imageSource: "tube.png",
+    logoSource: "logos/surf_logo.png",
   },
   {
     id: "1",
@@ -16,6 +17,7 @@ export const HEROBLOCKS = [
     imageSource: "surf.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
   },
   {
     id: "2",
@@ -23,17 +25,20 @@ export const HEROBLOCKS = [
     imageSource: "bureau.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
+    logoSource: "logos/code_logo.png",
   },
   {
     id: "3",
     title: "CODE Family affair - ARDUINO, initiations",
     imageSource: "robot.png",
+    logoSource: "logos/code_logo.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
   },
   {
     id: "4",
     title: "CODE Digital Nomade",
+    logoSource: "logos/code_logo.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     imageSource: "inde.png",
   },
@@ -77,21 +82,23 @@ export const WHAT_MAKES_US_DIFFERENT = [
 export const SURF_BLOCKS = [
   {
     id: "0",
-    title: "Des spots de surf exceptionnels",
+    title: "Plus la peine de partir à Hawaï,",
     text: `amet, at, efficitur. 
     laoreet leo. 
     hendrerit sit varius In Ut elit quis lacus, urna. 
     Ut dui eget Nullam placerat.
      faucibus nisl.
      ipsum id ac Morbi malesuada id`,
-    imageSource: "tube.png",
+    imageSource: "surf/surf1.png",
+    logoSource: "logos/surf_logo.png",
   },
   {
     id: "1",
-    title: "Sessions coachées",
-    imageSource: "surf.png",
+    title: "Des sessions tous niveaux",
+    imageSource: "surf/surf2.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
   },
   {
     id: "2",
@@ -99,36 +106,96 @@ export const SURF_BLOCKS = [
     imageSource: "bureau.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
   },
   {
-    id: "4",
+    id: "3",
     title: "CODE Family affair - ARDUINO, initiations",
     imageSource: "robot.png",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
   },
   {
-    id: "5",
+    id: "4",
     title: "CODE Digital Nomade",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     imageSource: "inde.png",
+    logoSource: "logos/surf_logo.png",
   },
   {
-    id: "6",
+    id: "5",
     title: "Yoga",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     imageSource: "yoga.png",
   },
   {
-    id: "8",
+    id: "6",
     title: "Hébergement",
     text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     imageSource: "hebergement.png",
   },
 ];
 
+
+
+export const CODE_BLOCKS = [
+  {
+    id: "0",
+    title: "LA PAGE CODE,",
+    text: `Bljyfuyfyfguyfu iuygiugi`,
+    imageSource: "surf/surf1.png",
+    logoSource: "logos/surf_logo.png",
+  },
+  {
+    id: "1",
+    title: "CODE MACHIN",
+    imageSource: "surf/surf2.png",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
+  },
+  {
+    id: "2",
+    title: "CODE DEV - React, Js, Hackaton",
+    imageSource: "bureau.png",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
+  },
+  {
+    id: "3",
+    title: "CODE Family affair - ARDUINO, initiations",
+    imageSource: "robot.png",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    link: "https://www.google.com",
+    logoSource: "logos/surf_logo.png",
+  },
+  {
+    id: "4",
+    title: "CODE Digital Nomade",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    imageSource: "inde.png",
+    logoSource: "logos/surf_logo.png",
+  },
+  {
+    id: "5",
+    title: "Yoga",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    imageSource: "yoga.png",
+  },
+  {
+    id: "6",
+    title: "Hébergement",
+    text: "amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
+    imageSource: "hebergement.png",
+  },
+];
+
+
 export const data = {
-  HEROBLOCKS,
+  LANDING_BLOCKS,
   WHAT_MAKES_US_DIFFERENT,
   SURF_BLOCKS,
+  CODE_BLOCKS
 };

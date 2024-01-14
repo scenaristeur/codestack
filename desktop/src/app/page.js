@@ -69,7 +69,7 @@ export default function DrawerAppBar(props) {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  CE que nous proposons
+                  Ce que nous proposons
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -93,7 +93,7 @@ export default function DrawerAppBar(props) {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  CE que nos client disent
+                  Ce que nos client disent
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   Lizards are a widespread group of squamate reptiles, with over
@@ -109,8 +109,8 @@ export default function DrawerAppBar(props) {
             </Card>
           </Stack>
           <Stack spacing={2}>
-            {data.SURF_BLOCKS.map((hero) => (
-              <HeroBlock key={hero.id.toString()} value={hero} />
+            {data.LANDING_BLOCKS.map((block) => (
+              <HeroBlock key={block.id.toString()} value={block} />
             ))}
           </Stack>
           <WhatMakesUsDifferent blocks={data.WHAT_MAKES_US_DIFFERENT} />
