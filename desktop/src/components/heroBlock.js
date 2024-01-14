@@ -5,7 +5,7 @@ export default function HeroBlock(props) {
   return (
     <Grid container spacing={2}>
       {props.value.id % 2 == 0 && (
-        <Grid xs={6}>
+        <Grid xs={6} item={true}>
           <img
             src={`../img/${props.value.imageSource}`} 
             alt={props.value.title}
@@ -13,7 +13,7 @@ export default function HeroBlock(props) {
         </Grid>
       )}
 
-      <Grid xs={6}>
+      <Grid xs={6} item={true}>
         <div
           style={{
             padding: "30px",
@@ -29,7 +29,7 @@ export default function HeroBlock(props) {
       </Grid>
 
       {props.value.id % 2 == 1 && (
-        <Grid xs={6}>
+        <Grid xs={6} item={true}>
           <img
             src={`../img/${props.value.imageSource}`}
             alt={props.value.title}
