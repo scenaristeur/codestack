@@ -140,7 +140,7 @@ export default function DrawerAppBar(props) {
 <div height="400" > PREMIER bandeau</div>
 
 <Card >
-      <CardActionArea>
+  
         <CardMedia
           component="img"
           height="140"
@@ -149,14 +149,13 @@ export default function DrawerAppBar(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          Un environnement exceptionnel pour surfer et coder lors d’un séjour haut niveau 
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          Decouvrez nos cours, nos session, les  lieux et l’équipe dans les LANDES 
           </Typography>
         </CardContent>
-      </CardActionArea>
+
       <CardActions>
         <Button size="small" color="primary">
           Share
@@ -168,8 +167,12 @@ export default function DrawerAppBar(props) {
 <div height="400" > SECOND bandeau</div>
 
 
-<Card>
-<CardActionArea>
+
+<Stack direction="row" spacing={2}>
+
+
+<Card sx={{ maxWidth: "100%" }}>
+
         <CardMedia
           component="img"
           height="140"
@@ -178,20 +181,50 @@ export default function DrawerAppBar(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            CE que nous proposons
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-      </CardActionArea>
+
       <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
       </CardActions>
     </Card>
+
+
+    <Card sx={{ maxWidth: "50%" }}>
+
+        <CardMedia
+          component="img"
+          height="140"
+          image="/img/tube.png"
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            CE que nos client disent
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+      </CardActions>
+    </Card>
+
+
+</Stack>
+
 
     <div height="400" > Troisieme bandeau</div>
 

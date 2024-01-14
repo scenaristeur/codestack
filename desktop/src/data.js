@@ -20,13 +20,14 @@ export const HEROBLOCKS = [
   {
     id: "3",
     title: "Sessions coachées",
-    imageSource: "images/burger1.png",
+    imageSource: "surf.png",
+    text:"amet, at, efficitur. laoreet leo. hendrerit sit varius In Ut elit quis lacus, urna. Ut dui eget Nullam placerat. faucibus nisl. ipsum id ac Morbi malesuada id ",
     link: "https://www.google.com",
   },
   {
     id: "4",
     title: "Burger Meal",
-    imageSource: "images/burger1.png",
+    imageSource: "tube.png",
   },
   {
     id: "5",

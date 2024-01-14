@@ -1,44 +1,39 @@
-import Grid from "@mui/material/Grid"; // Grid version 1
+import Grid from "@mui/material/Grid"; 
+import { Button } from '@mui/material';
 
 export default function HeroBlock(props) {
   return (
-
-    
-    //     <Stack direction="row" spacing={2}>
-
-    // {props.value.id%2 == 0 &&         <h1>{props.value.title}</h1>    }
-
-    //       <img
-    //         src="https://i.imgur.com/MK3eW3Am.jpg"
-    //         width="200"
-    //         alt="Katherine Johnson"
-    //       />
-
-    //     {props.value.id%2 == 1 &&         <h1>{props.value.title}</h1>    }
-    //     </Stack>
-
-    // <div>
-
-    // </div>
-
     <Grid container spacing={2}>
-      {props.value.id % 2 == 1 && (
+      {props.value.id % 2 == 0 && (
         <Grid xs={6}>
-          <h3>{props.value.title}</h3>
-          <div>{props.value.text}</div>
-          <button href="{props.value.link}">More</button>
+          <img
+            src={`../img/${props.value.imageSource}`} 
+            alt={props.value.title}
+          ></img>
         </Grid>
       )}
 
       <Grid xs={6}>
-      <img src={`../img/${props.value.imageSource}`}  alt={props.value.title}></img>
+        <div
+          style={{
+            padding: "30px",
+          }}
+        >
+          <h3>{props.value.title}</h3>
+          <div   style={{
+            padding: "10px 0px 40px 0px",
+          }}>{props.value.text}</div>
+
+          <Button href="{props.value.link}" variant="outlined">Book now</Button>
+        </div>
       </Grid>
 
-      {props.value.id % 2 == 0 && (
+      {props.value.id % 2 == 1 && (
         <Grid xs={6}>
-          <h3>{props.value.title}</h3>
-          <div>{props.value.text}</div>
-          <button href="{props.value.link}">More</button>
+          <img
+            src={`../img/${props.value.imageSource}`}
+            alt={props.value.title}
+          ></img>
         </Grid>
       )}
     </Grid>
